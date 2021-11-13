@@ -3,7 +3,9 @@
 acceleration = 0.01;
 deceleration = 0.01;
 a_mod = 20;
-d_mod = 2
+d_mod = 2;
+
+//image_angle = (mouse_x - x > 0) ? -darctan((mouse_y - y) / (mouse_x - x)) : -darctan((mouse_y - y) / (mouse_x - x)) + 180;
 
 // Movement
 if(keyboard_check(vk_left)){
