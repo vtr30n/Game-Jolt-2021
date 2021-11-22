@@ -25,7 +25,7 @@ if(keyboard_check(ord("A")))
 
 if(keyboard_check_pressed(ord("C")))
 {	
-	if(x_direction != 0 && y_direction != 0)
+	if(abs(x_direction) > 0 || abs(y_direction) > 0)
 	{
 		if(global.number_of_dashes > 0)
 		{
