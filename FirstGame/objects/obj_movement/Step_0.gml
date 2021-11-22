@@ -1,3 +1,5 @@
+x_direction = 0;
+y_direction = 0;
 if(keyboard_check(ord("D"))) 
 {
 	x += speed;
@@ -23,13 +25,16 @@ if(keyboard_check(ord("A")))
 
 if(keyboard_check_pressed(ord("C")))
 {	
-	if(global.number_of_dashes > 0)
+	if(x_direction != 0 && y_direction != 0)
 	{
-	global.number_of_dashes -= 1;
-	is_vulnerable = false;
-	x += x_direction * dashing_force;
-	y += y_direction * dashing_force;
-	is_vulnerable = true;
+		if(global.number_of_dashes > 0)
+		{
+		global.number_of_dashes -= 1;
+		is_vulnerable = false;
+		x += x_direction * dashing_force;
+		y += y_direction * dashing_force;
+		is_vulnerable = true;
+		}
 	}
 	//play animation
 }
