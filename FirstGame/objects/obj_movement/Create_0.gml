@@ -5,6 +5,10 @@
 x_direction = 0;
 y_direction = 0;
 
+xFacing = 0;
+yFacing = 0;
+
+
 dash_distance = 100;
 
 isTeleActive = false

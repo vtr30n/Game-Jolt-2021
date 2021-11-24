@@ -1,13 +1,17 @@
 x_direction = 0;
 y_direction = 0;
 
-if(keyboard_check(ord("W"))) y_direction = -1;
-if(keyboard_check(ord("A"))) x_direction = -1;
-if(keyboard_check(ord("S"))) y_direction = 1;
-if(keyboard_check(ord("D"))) x_direction = 1;
-isMoving = (x_direction != 0 || y_direction != 0)
+if(keyboard_check(ord("W"))){ y_direction = -1; yFacing = y_direction;}
+if(keyboard_check(ord("A"))){ x_direction = -1;  xFacing = x_direction;}
+if(keyboard_check(ord("S"))){ y_direction = 1; yFacing = y_direction;}
+if(keyboard_check(ord("D"))){ x_direction = 1; xFacing = x_direction;}
 
-image_angle = point_direction(x, y, x + x_direction, y + y_direction);
+isMoving = (x_direction != 0 || y_direction != 0)
+if(x_direction == 0 && y_direction != 0) xFacing = 0;
+if(y_direction == 0 && x_direction != 0) yFacing = 0;
+image_angle = point_direction(x, y, x + xFacing, y + yFacing);
+
+//image_angle = point_direction(x, y, x + x_direction, y + y_direction);
 if(isMoving) motion_set(image_angle, 5);
 if(!isMoving) motion_set(image_angle, 0);
 move_wrap(true, true, sprite_width / 2);
